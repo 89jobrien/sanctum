@@ -1,0 +1,17 @@
+{
+  "description": "Session-start hook: validates 1Password auth and orients to outstanding work",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $CLAUDE_PLUGIN_ROOT/hooks/op-resolver-startup.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}
