@@ -7,7 +7,7 @@
 Install alongside `joe-dev` for the full session-start experience:
 
 ```bash
-cc --plugin-dir ~/.claude/plugins/joe-secrets
+claude --plugin-dir ~/.claude/plugins/joe-secrets
 ```
 
 ## Skills
