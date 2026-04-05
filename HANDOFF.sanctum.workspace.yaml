@@ -1,21 +1,27 @@
 project: sanctum
 id: joe-sec
-updated: 2026-04-03
-
+updated: 2026-04-05
 items:
-  - id: joe-sec-1
-    name: install-and-test-session-hook
-    priority: P1
-    status: open
-    title: Install sanctum and verify SessionStart hook fires
-    description: |
-      Install via `claude --plugin-dir ~/dev/sanctum` and start a new session to confirm
-      the op-resolver-startup.sh hook runs, validates 1Password auth, and traces .envrc chain.
-    files:
-      - hooks/hooks.json
-      - hooks/op-resolver-startup.sh
-
+- id: joe-sec-1
+  doob_uuid: f13e72c3-cd11-416e-9101-dc9aa550781d
+  name: install-and-test-session-hook
+  priority: P1
+  status: open
+  title: Install sanctum and verify SessionStart hook fires
+  description: |
+    Install via `claude --plugin-dir ~/dev/sanctum` and start a new session to confirm
+    the op-resolver-startup.sh hook runs, validates 1Password auth, and traces .envrc chain.
+  files:
+  - hooks/hooks.json
+  - hooks/op-resolver-startup.sh
+  extra: []
 log:
-  - date: 2026-04-03
-    summary: Built plugin from scratch — op-resolver skill, SessionStart hook, published to GitHub
-    commits: [378cfc0, 4ef45df]
+- date: 2026-04-05
+  summary: Renamed plugin joe-secrets → sanctum — dirs, plugin.json, README, hooks, skills, HANDOFFs
+  commits:
+  - 2dcb749
+- date: 2026-04-03
+  summary: Built plugin from scratch — op-resolver skill, SessionStart hook, published to GitHub
+  commits:
+  - 378cfc0
+  - 4ef45df
