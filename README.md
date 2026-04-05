@@ -4,10 +4,8 @@
 
 ## Installation
 
-Install alongside `atelier` for the full session-start experience:
-
 ```bash
-claude --plugin-dir ~/.claude/plugins/sanctum
+claude plugin add github:89jobrien/sanctum
 ```
 
 ## Skills
