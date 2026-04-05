@@ -1,4 +1,4 @@
-project: joe-secrets
+project: sanctum
 id: joe-sec
 updated: 2026-04-03
 
@@ -7,9 +7,9 @@ items:
     name: install-and-test-session-hook
     priority: P1
     status: open
-    title: Install joe-secrets and verify SessionStart hook fires
+    title: Install sanctum and verify SessionStart hook fires
     description: |
-      Install via `claude --plugin-dir ~/dev/joe-secrets` and start a new session to confirm
+      Install via `claude --plugin-dir ~/dev/sanctum` and start a new session to confirm
       the op-resolver-startup.sh hook runs, validates 1Password auth, and traces .envrc chain.
     files:
       - hooks/hooks.json

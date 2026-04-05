@@ -2,7 +2,7 @@
 name: op-resolver
 description: This skill should be used when the user asks to "resolve secrets", "check
   1password", "debug env", "why isn't my op:// ref working", "trace direnv chain",
-  "fix secret not loading", or invokes /joe-secrets:op-resolver. Also fires automatically
+  "fix secret not loading", or invokes /sanctum:op-resolver. Also fires automatically
   at session start via the SessionStart hook.
 ---
 
@@ -93,4 +93,4 @@ Use `op item list --vault <vault>` to get exact item UUIDs.
 
 ## Slash Command
 
-Available as `/joe-secrets:op-resolver` for on-demand mid-session invocation.
+Available as `/sanctum:op-resolver` for on-demand mid-session invocation.

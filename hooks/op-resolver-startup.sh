@@ -37,7 +37,7 @@ if [ "$LITERAL_COUNT" -gt 0 ]; then
 fi
 
 # Compose system message
-MSG="[joe-secrets session-start]\n${OUTPUT}"
+MSG="[sanctum session-start]\n${OUTPUT}"
 if [ -n "$WARNINGS" ]; then
   MSG="${MSG}${WARNINGS}"
 fi

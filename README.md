@@ -1,20 +1,20 @@
-# joe-secrets
+# sanctum
 
 1Password and direnv session management — secrets validation and env chain tracing.
 
 ## Installation
 
-Install alongside [joe-dev](https://github.com/89jobrien/joe-dev) for the full session-start experience:
+Install alongside `atelier` for the full session-start experience:
 
 ```bash
-claude --plugin-dir ~/.claude/plugins/joe-secrets
+claude --plugin-dir ~/.claude/plugins/sanctum
 ```
 
 ## Skills
 
 | Skill | Trigger |
 |-------|---------|
-| op-resolver | "resolve secrets", "check 1password", "debug env", `/joe-secrets:op-resolver` |
+| op-resolver | "resolve secrets", "check 1password", "debug env", `/sanctum:op-resolver` |
 
 ## Hooks
 
@@ -27,10 +27,10 @@ claude --plugin-dir ~/.claude/plugins/joe-secrets
 
 ## Slash Command
 
-`/joe-secrets:op-resolver` — invoke op-resolver on demand mid-session.
+`/sanctum:op-resolver` — invoke op-resolver on demand mid-session.
 
 ## Prerequisites
 
 - 1Password CLI (`op`) installed and on PATH
 - `direnv` installed (optional — chain tracing degrades gracefully without it)
-- Install `joe-dev` for `handon` skill that session-start chains into
+- Install `atelier` for `handon` skill that session-start chains into
