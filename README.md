@@ -4,7 +4,7 @@
 
 ## Installation
 
-Install alongside `joe-dev` for the full session-start experience:
+Install alongside [joe-dev](https://github.com/89jobrien/joe-dev) for the full session-start experience:
 
 ```bash
 claude --plugin-dir ~/.claude/plugins/joe-secrets
