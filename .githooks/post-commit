@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Reinstall the sanctum plugin when plugin sources change so the cache stays fresh.
+
+PLUGIN_FILES=$(git diff --name-only HEAD~1 HEAD 2>/dev/null \
+  | grep -E '^(\.claude-plugin/|skills/|agents/|hooks/)' || true)
+
+if [ -z "$PLUGIN_FILES" ]; then
+  exit 0
+fi
+
+if ! command -v claude >/dev/null 2>&1; then
+  echo "[sanctum] claude not on PATH — skipping plugin reinstall"
+  exit 0
+fi
+
+echo "[sanctum] plugin sources changed — reinstalling..."
+claude plugin uninstall sanctum --force 2>/dev/null || true
+claude plugin install sanctum@local
+echo "[sanctum] plugin reinstalled (restart Claude Code to apply)"
