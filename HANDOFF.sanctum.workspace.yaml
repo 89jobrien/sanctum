@@ -1,6 +1,6 @@
 project: sanctum
 id: joe-sec
-updated: 2026-04-05
+updated: 2026-04-06
 items:
 - id: joe-sec-1
   doob_uuid: f13e72c3-cd11-416e-9101-dc9aa550781d
@@ -15,7 +15,27 @@ items:
   - hooks/hooks.json
   - hooks/op-resolver-startup.sh
   extra: []
+- id: joe-sec-2
+  name: sanctum-binary
+  priority: P1
+  status: open
+  title: Build sanctum Go binary
+  description: |
+    Go CLI binary replacing inline bash in the SessionStart hook. Commands: check, trace,
+    validate, scaffold. Interfaces for op/tailscale to keep it testable. See spec at
+    docs/superpowers/specs/2026-04-06-sanctum-binary-design.md.
+  files:
+  - cmd/sanctum/main.go
+  - internal/op/
+  - internal/envrc/
+  - internal/tailscale/
+  - internal/report/
+  - hooks/op-resolver-startup.sh
+  extra: []
 log:
+- date: 2026-04-06
+  summary: Designed sanctum binary — spec written to docs/superpowers/specs/2026-04-06-sanctum-binary-design.md
+  commits: []
 - date: 2026-04-05
   summary: Renamed plugin joe-secrets → sanctum — dirs, plugin.json, README, hooks, skills, HANDOFFs
   commits:
