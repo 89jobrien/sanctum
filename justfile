@@ -9,7 +9,7 @@ init:
 
     # 1. Wire local hooks
     git config core.hooksPath .githooks
-    chmod +x .githooks/pre-commit .githooks/post-commit
+    chmod +x .githooks/pre-commit .githooks/post-commit .githooks/pre-push
     echo "    hooks: .githooks wired"
 
     # 2. Verify claude is available
@@ -49,15 +49,35 @@ init:
 
     # 5. Install / reinstall plugin
     claude plugin uninstall sanctum --force 2>/dev/null || true
-    claude plugin install sanctum@local
+    claude plugin install sanctum@bazaar
     echo "    plugin: sanctum installed"
 
     echo ""
     echo "==> Done. Restart Claude Code to apply."
 
+# Build the sanctum Go binary to bin/sanctum
+build:
+    go build -o bin/sanctum ./cmd/sanctum
+
+# Run unit tests
+test:
+    go test ./...
+
+# Run unit tests with verbose output
+test-v:
+    go test -v ./...
+
+# Run integration tests (requires live op auth and real .envrc files)
+test-integration:
+    go test -tags integration ./...
+
+# Run go vet
+vet:
+    go vet ./...
+
 # Reinstall plugin without re-running full init
 reinstall:
     #!/usr/bin/env bash
     claude plugin uninstall sanctum --force 2>/dev/null || true
-    claude plugin install sanctum@local
+    claude plugin install sanctum@bazaar
     echo "[sanctum] reinstalled — restart Claude Code to apply"

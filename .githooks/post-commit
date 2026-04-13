@@ -15,5 +15,5 @@ fi
 
 echo "[sanctum] plugin sources changed — reinstalling..."
 claude plugin uninstall sanctum --force 2>/dev/null || true
-claude plugin install sanctum@local
+claude plugin install sanctum@bazaar
 echo "[sanctum] plugin reinstalled (restart Claude Code to apply)"

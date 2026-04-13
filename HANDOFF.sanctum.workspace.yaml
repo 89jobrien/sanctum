@@ -14,7 +14,10 @@ items:
   files:
   - hooks/hooks.json
   - hooks/op-resolver-startup.sh
-  extra: []
+  extra:
+  - date: 2026-04-06
+    type: note
+    note: "captured in doob — todo id 7oz43rpgpf46vgomm3ny"
 - id: joe-sec-2
   name: sanctum-binary
   priority: P1
@@ -31,7 +34,10 @@ items:
   - internal/tailscale/
   - internal/report/
   - hooks/op-resolver-startup.sh
-  extra: []
+  extra:
+  - date: 2026-04-06
+    type: note
+    note: "captured in doob — todo id yehasnok48kz2bqbhiiu"
 log:
 - date: 2026-04-06
   summary: Designed sanctum binary — spec written to docs/superpowers/specs/2026-04-06-sanctum-binary-design.md
