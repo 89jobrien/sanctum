@@ -1,0 +1,56 @@
+project: sanctum
+id: sanctum
+updated: 20260419:162232
+items:
+- id: joe-sec-2
+  name: sanctum-binary
+  priority: P1
+  status: open
+  title: Build sanctum Go binary
+  description: |
+    Go CLI binary replacing inline bash in the SessionStart hook. Commands:
+    check, trace, validate, scaffold. Interfaces for op/tailscale to keep it
+    testable. Spec at docs/superpowers/specs/2026-04-06-sanctum-binary-design.md.
+  files:
+  - cmd/sanctum/main.go
+  - internal/op/
+  - internal/envrc/
+  - internal/tailscale/
+  - internal/report/
+  extra: []
+- id: joe-sec-1
+  name: install-and-test-session-hook
+  priority: P1
+  status: open
+  title: Install sanctum and verify SessionStart hook fires
+  description: |
+    Install via claude --plugin-dir ~/dev/sanctum and start a new session to
+    confirm the op-resolver-startup.sh hook runs, validates 1Password auth,
+    and traces .envrc chain.
+  files:
+  - hooks/hooks.json
+  - hooks/op-resolver-startup.sh
+  extra: []
+log:
+- date: 20260419:162232
+  session: 4
+  summary: handup sweep — migrated to HANDOFF.sanctum.sanctum.yaml. Items unchanged (joe-sec-1/2 still open).
+  commits: []
+- date: 20260406:000000
+  session: 3
+  summary: Designed sanctum binary — spec written to docs/superpowers/specs/2026-04-06-sanctum-binary-design.md.
+  commits: []
+- date: 20260405:000000
+  session: 2
+  summary: Renamed plugin joe-secrets → sanctum — dirs, plugin.json, README, hooks, skills, HANDOFFs.
+  commits:
+  - sha: 2dcb749
+    branch: main
+- date: 20260403:000000
+  session: 1
+  summary: Built plugin from scratch — op-resolver skill, SessionStart hook, published to GitHub.
+  commits:
+  - sha: 378cfc0
+    branch: main
+  - sha: 4ef45df
+    branch: main
