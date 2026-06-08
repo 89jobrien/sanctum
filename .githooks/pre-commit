@@ -26,7 +26,10 @@ if [ -n "$PLUGIN_STAGED" ] && [ -f "$MANIFEST" ]; then
   echo "[sanctum] version bumped $current → $next"
 fi
 
-# Delegate to global pre-commit hook
+# Delegate to global pre-commit hook (guard against recursion)
+[ -n "$_GLOBAL_PRECOMMIT" ] && exit 0
+export _GLOBAL_PRECOMMIT=1
+
 GLOBAL_HOOK="$HOME/.config/git/hooks/pre-commit"
 if [ -x "$GLOBAL_HOOK" ]; then
   exec "$GLOBAL_HOOK" "$@"
