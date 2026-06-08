@@ -1,6 +1,6 @@
 {
   "name": "sanctum",
-  "version": "75cbf7e",
+  "version": "bf007be",
   "description": "1Password and direnv session management — secrets validation and env chain tracing",
   "author": { "name": "Joseph O'Brien" }
 }
